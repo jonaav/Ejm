@@ -1,4 +1,4 @@
-package com.everis.entity;
+package com.everis.customerms.entity;
 
 import java.io.Serializable;
 
@@ -36,7 +36,7 @@ public class Customer implements Serializable{
 	
 	private String photoUrl;
 	
-	@NotEmpty(message = "El nombre no puede ser vacio")
+	//@NotEmpty(message = "El nombre no puede ser vacio")
 	private Region region;
 	
 	private String state;

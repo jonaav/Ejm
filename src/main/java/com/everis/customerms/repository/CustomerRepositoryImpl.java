@@ -1,13 +1,14 @@
-package com.everis.repository;
+package com.everis.customerms.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
-import com.everis.entity.Customer;
-import com.everis.entity.Region;
+import com.everis.customerms.entity.Customer;
+import com.everis.customerms.entity.Region;
 
 @Repository
 public class CustomerRepositoryImpl implements ICustomerRepository{
@@ -54,27 +55,31 @@ public class CustomerRepositoryImpl implements ICustomerRepository{
 	}
 
 	@Override
-	public Optional<Customer> findByID(Long id) {
+	public Optional<Customer> findById(Long id) {
 		return customers.stream().filter(p -> p.getId() == id).findFirst();
 	}
-	@Override
-	public Customer findByNumberID(String numberID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Customer> findByRegion(Region region) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
+	
 	@Override
 	public <S extends Customer> S save(S entity) {
-		// TODO Auto-generated method stub
-		return null;
+		customers.add(entity);
+		return entity;
 	}
+	
+	@Override
+	public List<Customer> findByRegion(Region region) {
+		
+		return customers.stream().filter(
+				p -> p.getRegion().getId() == region.getId()).collect(Collectors.toList());
+	}
+
+	@Override
+	public Customer findByNumberID(String numberID) {
+		
+		return customers.stream().filter(
+				p -> p.getNumberID().equals(numberID)).findAny().orElse(null);
+	}
+
+
 
 
 }

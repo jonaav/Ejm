@@ -1,4 +1,4 @@
-package com.everis.entity;
+package com.everis.customerms.entity;
 
 import java.io.Serializable;
 
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor @Builder
-@Entity
 public class Region implements Serializable {
 
 	private static final long serialVersionUID = 1L;
