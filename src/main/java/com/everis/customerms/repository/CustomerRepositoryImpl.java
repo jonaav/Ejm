@@ -1,4 +1,4 @@
-package com.everis.customerms.repository;
+/*package com.everis.customerms.repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +12,10 @@ import com.everis.customerms.entity.Region;
 
 @Repository
 public class CustomerRepositoryImpl implements ICustomerRepository{
-
+		
 	private List<Region> regiones = new ArrayList<Region>();
 	private List<Customer> customers = new ArrayList<Customer>();
-	
+
 	private void init() {
 		Region r1 = new Region(1L, "Sudamérica");
 		Region r2 = new Region(2L, "Centroamérica");
@@ -83,3 +83,4 @@ public class CustomerRepositoryImpl implements ICustomerRepository{
 
 
 }
+*/
