@@ -18,7 +18,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Long>{
 	public List<Customer> findByRegion(@Param("id") Long id);
 	
 	public List<Customer> findAll();
-	public <S extends Customer> S save(S entity);
+	//public <S extends Customer> S save(S entity);
 	
 	@Query(value = "SELECT * FROM customers c WHERE c.id = :id", nativeQuery = true)
 	public Optional<Customer> findById(@Param("id") Long id);
