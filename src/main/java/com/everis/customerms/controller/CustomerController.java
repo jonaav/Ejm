@@ -73,7 +73,7 @@ public class CustomerController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Customer> createCustomer(@Valid @RequestBody Customer customer, BindingResult result) {
+	public ResponseEntity<Customer> createCustomer(/*@Valid*/ @RequestBody Customer customer, BindingResult result) {
 		log.info("Creating Customer : {}", customer);
 		if (result.hasErrors()) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, this.formatMessage(result));

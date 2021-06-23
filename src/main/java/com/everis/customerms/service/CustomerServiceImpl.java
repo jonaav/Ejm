@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements ICustomerService{
 
 	@Override
 	public Customer createCustomer(Customer customer) {
-		Customer customerDB = customerRepository.findByNumberID(customer.getNumberID());
+		Customer customerDB = customerRepository.findByNumberId(customer.getNumberId());
 		if(customerDB != null) {
 			return customerDB;
 		}

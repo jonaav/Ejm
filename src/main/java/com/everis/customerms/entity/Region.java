@@ -15,7 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="regions")
+@Table(name="region")
 @Data
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Region implements Serializable {

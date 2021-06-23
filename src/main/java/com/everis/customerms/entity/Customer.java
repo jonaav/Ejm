@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="customers")
+@Table(name="customer")
 @Data
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class Customer implements Serializable{
@@ -32,7 +33,7 @@ public class Customer implements Serializable{
 	
 	@NotEmpty(message = "El número de documento no puede ser vacío")
 	@Size(min = 8, max = 8, message = "El tamaño de numero de documento es 8")
-	private String numberID;
+	private String numberId;
 	
 	@NotEmpty(message = "El nombre no puede ser vacio")
 	private String firstName;
@@ -48,8 +49,8 @@ public class Customer implements Serializable{
 	
 	private String photoUrl;
 	
-	@NotEmpty(message = "El nombre no puede ser vacio")
-	@JoinColumn(name="region_id")
+	//@NotEmpty(message = "El nombre no puede ser vacio")
+	@JoinColumn(name="region_id", foreignKey = @ForeignKey(name="fk_region_id"))
 	@ManyToOne
 	private Region region;
 	
